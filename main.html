@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8"/>
+			<meta name="description" content="Assignment I"/>
+			<title>Assignment I:Jquery</title>
+			<link rel="stylesheet" href="main.css">
+			<script type="text/javascript" src ="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script></script>
+			<script type="text/javascript">
+				$(document).ready(function(){
+
+
+					$('#add_class_button').click(function(){
+						$('#add_class p').addClass("selected highlighted");
+					})
+
+					$('#after_button').click(function(){
+						$('#after p').after("<p>This is a text inserted after!</p>");
+					})
+
+					$('#append_button').click(function(){
+						$('#append p').append("This is an appended text!");
+					})
+
+					$('#attr_button').click(function(){
+						$('#attr img').attr('width','500');
+					})
+
+					$('#before_button').click(function(){
+						$('#before p').before("<p>This is a text inserted before!</p>");
+					})
+
+					$('#html_button').click(function(){
+						$('#html p').html('Hello World!');
+					})
+
+					$('#text_button').click(function(){
+						$('#text p').first().text('Hello World!');
+					})
+
+					$('#val_button').click(function(){
+						$('#val input:text').val("Glenn Quagmire");
+					})
+
+					$('#toggle_button').click(function(){
+						$('#toggle p').first().next().toggle();
+					})
+
+					$('#hide_button').click(function(){
+						$('#hide p').hide();
+					})
+
+					$('#show_button').click(function(){
+						$('#show p').first().show();
+					})
+
+					$('#slide_down_button').click(function(){
+						$('#slide img').slideDown();
+					})
+					$('#slide_up_button').click(function(){
+						$('#slide img').slideUp();
+					})
+
+					$('#slide_toggle_button').click(function(){
+						$('#slide_toggle img').slideToggle();
+					})
+
+					$('#fade_in_button').click(function(){
+						$('#fade img').fadeIn();
+					})
+					$('#fade_out_button').click(function(){
+						$('#fade img').fadeOut();
+					})
+
+					$('#focus input').focus(function(){
+						$('span').css("display","inline").fadeOut();
+					})
+
+					$('#click_button').click(function(){
+						alert("I'm an annoying alert!!!");
+					})
+
+				});
+			</script>
+		</head>
+
+
+		<body>
+		<div id="container">
+
+
+			<div id="add_class">
+				<h1>AddClass</h1>
+				<button type="button" id="add_class_button">AddClass</button>
+				<p>Click the button to add class 'selected' and 'highlighted' to this paragraph.</p>
+			</div>
+
+			<div id="after">
+				<h1>After</h1>
+				<button type="button" id="after_button">After</button>
+				<p>Click here to get some inserted text after this paragraph!</p>
+			</div>
+
+			<div id="append">
+				<h1>Append</h1>
+				<button type="button" id="append_button">Append</button>
+				<p>Click the button to append a new text!</p>
+			</div>
+
+
+			<div id="attr">
+				<h1>Attr</h1>
+				<button type="button" id="attr_button">Attr</button>
+				<img src="pictures/img_pulpitrock.jpg" alt="pic of a ledge" width="284" height="213">
+				<p>Click the button to make the image wider!</p>
+				<p>The attr() method sets or returns attributes and values of the selected elements.
+
+				When this method is used to return the attribute value, it returns the value of the FIRST matched element.
+
+				When this method is used to set attribute values, it sets one or more attribute/value pairs for the set of matched elements.</p>
+			</div>
+
+			<div id="before">
+				<h1>Before</h1>
+				<button type="button" id="before_button">Before</button>
+				<p>Click this button to get an inserted text before this element.</p>
+			</div>
+
+			<div id="html">
+				<h1>Html</h1>
+				<button type="button" id="html_button">Html</button>
+				<p>Click here to change the content of this text</p>
+			</div>
+
+			<div id="text">
+				<h1>Text</h1>
+				<button type="button" id="text_button">text</button>
+				<p>Click here to change the content of this text</p>
+				<p>Where to use:
+
+					use .html() to operate on containers having html elements.
+					use .text() to modify text of elements usually having separate open and closing tags
+					Where not to use:
+
+					.text() method cannot be used on form inputs or scripts.
+
+					.val() for input or textarea elements.
+					.html() for value of a script element.
+					Picking up html content from .text() will convert the html tags into html entities.
+
+					Difference:
+
+					.text() can be used in both XML and HTML documents.
+					.html() is only for html documents.</p>
+			</div>
+
+			<div id="val">
+				<h1>Val</h1>
+				<button type="button" id="val_button">Val</button>
+				<p>Click the button to display a name!</p>
+				<p>Note: The val() method is mostly used with HTML form elements.</p>
+				<p>Name: <input type="text" name="user"></p>
+			</div>
+
+			<div id="toggle">
+				<h1>Toggle</h1>
+				<button type="button" id="toggle_button">Toggle</button>
+				<p>Click the button to toggle between hiding and showing the paragraph</p>
+				<p>This is a paragraph.</p>
+			</div>
+
+			<div id="hide">
+				<h1>Hide</h1>
+				<button type="button" id="hide_button">Hide</button>
+				<p>Click the button to hide me!</p>
+			</div>
+
+			<div id="show">
+				<h1>Show</h1>
+				<button type="button" id="show_button">Show</button>
+				<p hidden>This paragraph should be hidden.</p>
+				<p>Click the button to show the paragraph above!</p>
+			</div>
+
+			<div id="slide">
+				<h1>Slide Up and Down</h1>
+				<button type="button" id="slide_down_button">Slide Down</button>
+				<button type="button" id="slide_up_button">Slide Up</button>
+				<img src="pictures/img_pulpitrock.jpg" alt="some rock"> 
+				<p>Click the buttons to slide up and down the image!</p>
+			</div>
+
+			<div id="slide_toggle">
+				<h1>Slidetoggle</h1>
+				<button type="button" id="slide_toggle_button">Slidetoggle</button>
+				<img src="pictures/img_pulpitrock.jpg" alt="a rock" hidden>
+				<p>Click the button to slidetoggle a hidden image</p>
+			</div>
+
+			<div id="fade">
+				<h1>Fade In and Out</h1>
+				<button type="button" id="fade_out_button">Fade Out</button>
+				<button type="button" id="fade_in_button">Fade In</button>
+				<img src="pictures/img_pulpitrock.jpg" alt="rock">
+				<p>Click the buttons to fade the img in and out!</p>
+			</div>
+
+
+			<div id="focus">
+				<h1>Focus</h1>
+				<input>
+				<span>Phone number pleasseee...</span>
+				<p>Click in the input field to get focus.</p>
+			</div>
+
+			<div id="click">
+				<h1>Click</h1>
+				<button type="button" id="click_button">Click</button>
+				<p>Click the button to get an annoying alert!</p>
+			</div>
+
+		</div>	
+
+		<!--
+		<script>
+			$("p").last().addClass("selected");
+		</script>
+		-->
+
+		</body>
+</html>		
